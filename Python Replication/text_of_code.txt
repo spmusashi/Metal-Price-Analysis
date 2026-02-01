@@ -1,0 +1,88 @@
+#' Projects future prices based on regression
+#'
+#' Works with multiple time intervals. Do not oversupply with data, regression is expensive.
+#' @param df Dataframe with price data. The opening price is used for projection purposes, works for all security types
+#' @param tickername The ticker or the security you are putting in.
+#' @return What comes out of this function
+#' @examples
+#'
+#' project_price(tail(SPYdaily,200), "SPY")
+#' project_price(SPY15, "SPY")
+#' @export
+project_price <- function(df, tickername) {
+  hs <- NULL
+  df <- df %>% mutate(hs =  as.numeric(timestamp - df$timestamp[1], units = 'hours')) %>%
+    mutate(hs2 = hs^2) %>%
+    mutate(hs3 = hs^3)
+  ln1 <- lm(formula = open ~ hs, df)
+  ln2 <- lm(formula = open ~ hs + hs2, df)
+  ln3 <- lm(formula = open ~ hs + hs2 + hs3, df)
+  ndf <- tibble((min(df$hs):(max(df$hs + 200 ))))
+  colnames(ndf) <- 'hs'
+  ndf <- ndf %>%
+    mutate(hs2 = hs^2) %>%
+    mutate(hs3 = hs^3)
+
+  ndf <- ndf %>% mutate(btime = min(df$timestamp) + hours(hs))
+  pr1 <- as.numeric(predict(ln1, ndf))
+  pr2 <- as.numeric(predict(ln2, ndf))
+  pr3 <- as.numeric(predict(ln3, ndf))
+  pr4 <- (pr1 + pr2 + pr3)/3
+  plot_ly(df, type = 'scatter', mode = 'lines') %>%
+    add_trace(x = ~timestamp, y = ~open, name = 'Open') %>%
+    add_trace(x = ndf$btime, y = pr1, name = 'Linear') %>%
+    add_trace(x = ndf$btime, y = pr2, name = "Quadratic") %>%
+    add_trace(x = ndf$btime, y = pr3, name = 'Cubic') %>%
+    add_trace(x = ndf$btime, y = pr4, name = 'Average')%>%
+    layout(title = paste(tickername, 'Projections'), yaxis = list(title = 'Price in Dollars'), xaxis = list(title = 'Dates'))
+}
+
+
+
+#' Generate moving averages
+#'
+#' Description
+#' @param df Dataframe with price data
+#' @param ma # of periods for the moving average to calculate
+#' @return a vector with the same number of columns as df showing the moving averages. Periods before moving
+#' average should be not considered for use. Output is kept same columns for compatibility.
+#' @examples
+#' SPYDMA200 <- genMA(SPYdaily, 14)
+#' @export
+
+genMA = function(df, ma) { #This is a generalized function that allows you to find moving average based on the timeframe of candlestick data. Returns a list that allows for
+  rp = (df$high + df$low)/2
+  d1 = dim(df)[1]
+  l = list()
+  for(i in 1:d1) {
+    gl = c()
+    for(j in 1:ma) {
+      gl = sort(append(gl,abs(j - i)))
+    }
+    l[[i]] = gl
+
+  }
+  nl = list()
+  for (k in 1:d1) {
+
+    nl = append(nl, mean(rp[l[[k]]]))
+
+  }
+  return(unlist(nl))
+}
+
+#' Candlestick chart
+#'
+#' Returns plot_ly candlestick chart
+#' @param df Dataframe with price data.
+#' @return A candlestick  chart
+#' @examples
+#' candles(SPYdaily)
+#' @export
+candles = function(df) { #df name to be typed in string
+  fig = plot_ly(df, x = ~timestamp, type="candlestick",
+                open = ~open, close = ~close,
+                high = ~high, low = ~low, name = deparse(substitute(df))) %>% plotly::layout(title = "Candlestick Chart",
+                                                                                             xaxis = list(rangeslider = list(visible = F)))
+  return(fig)
+}
