@@ -19,4 +19,14 @@ Average (DMA) a valuable metric or should we rectify a different metric?
 - Are the moving prices accurate in relation to the industry?
 - Are the dependencies of the project reliable information?
 
+## Process Challenges
+Proper GitHub management. For example, how often should we save something on
+GitHub vs. local. Sharing the development of this project can be challenging especially if we are intentional
+about branching and merging.
+Should we just avoid the possibility of merge conflicts by developing locally and adding associated files when
+they have been tested? Lots of possibilities with this.
+
+## Teamwork Challenges
+We live in very different time zones. Edward lives in Pacific Time while Adrian lives
+in Shanghai Time. We are also at different stages in our careers and personal lives.
 
