@@ -1,4 +1,4 @@
-A git branch allows us to experiment in each teamwork code. The main line of development is what we work on as a team. 
+A git branch allows us to experiment in each individual work without the risk to alter the main branch. 
 
 Creating a branch for each feature and a nice to have feature would be the ideal way to work as a team because each member manages their own time and workflow independently. 
 
