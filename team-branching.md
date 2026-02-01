@@ -1,7 +1,7 @@
 A git branch allows us to experiment in each individual work without the risk to alter the main branch. 
 
-Creating a branch for each feature and a nice to have feature would be the ideal way to work as a team because each member manages their own time and workflow independently. 
+We will create a branch for each phase of development in terms of adding new features as well as individual responsibilities- for example, working on the features we each suggested. When the features are tested and working, we will update the main with the branch as we progress. 
 
-Our team is in opposite time zones and has varying levels of coding experience. Working in the main could be challenging therefore working in branch per feature is  the best strategy.
+We can constantly update fresher data on the main as that should not cause any conflicts if we are drawing from our data sources correctly.
 
-Eventually, the branches are merged  into the main branch.
+Eventually, the branches are merged  into the main branch. 
