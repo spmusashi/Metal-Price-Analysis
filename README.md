@@ -8,9 +8,9 @@ leading indicator for another metal?). Metal prices are also related to energy p
 data as available and relevant based on our research.
 
 Metal prices are determined  by variable and fixed costs. The key input of metal production is energy,
-for example; if we are able to follow energy prices trends, therefore, the prices of energy such as gas,
-electricity or coal therefore we could assume that these prices will impact the final price of the metal
-because in order to produce a metal, energy input is needed.
+for example; if we are able to follow energy prices trends such as gas, electricity or coal therefore 
+we could assume that these prices will impact the final price of the metal because in order to produce
+a metal, energy input is needed.
 
 Depending on the manufacturing process of the region, some metals are produced by a form of burning coal while 
 others by electrical induction which means melting with a magnetic field.
