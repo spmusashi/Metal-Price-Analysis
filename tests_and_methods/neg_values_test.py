@@ -2,7 +2,6 @@ import unittest
 import pandas as pd
 import csv
 import plotly
-#import plotly.graph_obcalled_listects as go
 import matplotlib.pyplot as plt
 import numpy as np
 import random
@@ -41,23 +40,32 @@ def calc_mean_from_index(df, moving_average_length):
     for generated_means in df_length_index:
         list_of_means.append(np.round((np.mean(rolling_price[reference_list_of_lists[generated_means]])),2))
     return(list_of_means)
+
+def check_for_negatives_in_list(self, list_of_numbers ):
+    neg_val_count = 0
+    flattened_list_index_length = len(list_of_numbers)
+    flattened_list_index = range(flattened_list_index_length)
+    for number_instance in flattened_list_index:
+        if list_of_numbers[number_instance] < 0:
+            neg_val_count = neg_val_count + 1
+    return(neg_val_count)
+
+    
         
-
-
-
 negative_values_test_input = generate_index(oil_df, 5)
 flattened_list = [item for sublist in negative_values_test_input for item in sublist]
 flattened_list_index = range(len(flattened_list))
 
 
-def neg_values_test(list_of_values):
-    for values in flattened_list_index:
-        if flattened_list[values] < 0:
-            raise ValueError("Index value cannot be negative")
+class reasonable_values (unittest.TestCase):
+    def test_count_neg_fxn(self):
+        example_list = list([-5,6, 7, 8])
+        self.test_count_neg_fxn_input = check_for_negatives_in_list(self, example_list)
+        self.assertEqual(self.test_count_neg_fxn_input, 1) #there is one negative value in the list        
 
-class neg_values (unittest.TestCase):
-    def neg_values_test(self):
-        with self.assertRaises(ValueError):
-            neg_values_test(flattened_list)
-            
-            
+    
+    def test_neg_val(self):
+        self.assertEqual(check_for_negatives_in_list(self, flattened_list) , 0 )
+    def test_index_is_integer(self):
+        self.assertTrue(all(isinstance(item, int) for item in flattened_list))
+
