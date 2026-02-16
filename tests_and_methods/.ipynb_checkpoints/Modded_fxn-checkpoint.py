@@ -1,7 +1,7 @@
-import unittest
 import pandas as pd
 import csv
 import plotly
+#import plotly.graph_obcalled_listects as go
 import matplotlib.pyplot as plt
 import numpy as np
 import random
@@ -40,34 +40,4 @@ def calc_mean_from_index(df, moving_average_length):
     for generated_means in df_length_index:
         list_of_means.append(np.round((np.mean(rolling_price[reference_list_of_lists[generated_means]])),2))
     return(list_of_means)
-
-def check_for_negatives_in_list(self, list_of_numbers ):
-    neg_val_count = 0
-    flattened_list_index_length = len(list_of_numbers)
-    flattened_list_index = range(flattened_list_index_length)
-    for number_instance in flattened_list_index:
-        if list_of_numbers[number_instance] < 0:
-            neg_val_count = neg_val_count + 1
-    return(neg_val_count)
-
-    
         
-negative_values_test_input = generate_index(oil_df, 5)
-flattened_list = [item for sublist in negative_values_test_input for item in sublist]
-flattened_list_index = range(len(flattened_list))
-
-#Part Two Testing the second part of the function where we assess the ressults of the moving averages
-
-test_2_input = calc_mean_from_index(cu_df, 10)
-max_test_2_limit = max(cu_df['high'])
-min_test_2_limit = min(cu_df['low'])
-
-
-class plausible_values (unittest.TestCase):
-    def test_max_is_max(self):
-        self.assertTrue(max_test_2_limit > max(test_2_input))
-    def test_min_is_min(self):
-        self.assertTrue(min_test_2_limit < min(test_2_input))
-    def test_no_negatives(self):
-        self.assertEqual(check_for_negatives_in_list(self, test_2_input) , 0)
-
