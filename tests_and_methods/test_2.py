@@ -68,3 +68,17 @@ class reasonable_values (unittest.TestCase):
         self.assertEqual(check_for_negatives_in_list(self, flattened_list) , 0 )
     def test_index_is_integer(self):
         self.assertTrue(all(isinstance(item, int) for item in flattened_list))
+
+
+
+class reasonable_values (unittest.TestCase):
+    def test_count_neg_fxn(self):
+        example_list = list([-5, 6, 7, 8])
+        self.test_count_neg_fxn_input = calc_mean_from_index(self, example_list)
+        self.assertEqual(self.test_count_neg_fxn_input, 1) #there is one negative value in the list
+
+    def test_neg_val(self):
+        self.assertEqual(check_for_negatives_in_list(self, flattened_list) , 0)
+    def test_index_is_integer(self):
+        self.assertTrue(all(isinstance(item, int) for item in flattened_list))
+
