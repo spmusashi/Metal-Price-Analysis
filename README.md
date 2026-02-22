@@ -18,7 +18,19 @@ others by electrical induction which means melting with a magnetic field.
 There are many other costs of production that we can use to analyze the final price of metals in the market
 so this project is an exploratory tool to identify the most influential and accurate inputs.
 
-## What is the code for?:
+## What is the code for?
+We are turning the data into a chart easy to visualize, in this case we are using
+candlestick charts. The daily data is transformed into a visualized structure.
+
+We use daily commodity data for copper, gold, silver and oil.
+For titanium we use monthly prices because Titanium is not traded as a non tangible asset
+in contrast with the rest. 
+The trade if titanium is done in the traditional supply chain physical market. We 
+load the datasets into the program.
+
+
+
+
 
 
 
