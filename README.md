@@ -69,14 +69,16 @@ Large corporations and individuals with finance and stock trading information us
 ## Usage
 
 The inputs are datasets of daily prices of copper, gold, silver, oil and titanium with time markup, open price, high price, low price and close price.
-The outputs are the visual charts candlestick type with price predictions.
+With these inputs, we refine and trasnform them into data that we feed into the neural net. 
+The outputs include candlestick visualization as well as a price prediction for the US Price Producer Index.
 
 1. Load datasets in the form of CSV files.
-2. Generate features.
-	- Moving Averages.
-	- Polynomial predictors.
-3. Train the model.
-4. Evaluate visualy the charts.
+2. View the data to ensure accuracy. 
+3. Generate features.
+	- Moving Averages
+	- Polynomial regressions
+4. Train the model using processed / generated input.
+5. Evaluate prediction by back-testing as well as incoming data.
 
 
 

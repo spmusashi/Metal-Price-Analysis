@@ -7,8 +7,95 @@ data (ex. Does past 5 days of copper prices help us predict next day’s silver-
 leading indicator for another metal?). Metal prices are also related to energy prices. We will add other pricing
 data as available and relevant based on our research.
 
+Metal prices are determined  by variable and fixed costs. The key input of metal production is energy,
+for example; if we are able to follow energy prices trends such as gas, electricity or coal therefore 
+we could assume that these prices will impact the final price of the metal because in order to produce
+a metal, energy input is needed.
+
+Depending on the manufacturing process of the region, some metals are produced by a form of burning coal while 
+others by electrical induction which means melting with a magnetic field.
+
+There are many other costs of production that we can use to analyze the final price of metals in the market
+so this project is an exploratory tool to identify the most influential and accurate inputs.
+
+## What is the code for?
+We are turning the data into a chart easy to visualize, in this case we are using
+candlestick charts. The daily data is transformed into a visualized structure.
+
+We use daily commodity data for copper, gold, silver and oil.
+For titanium we use monthly prices because Titanium is not traded as a non tangible asset
+in contrast with the rest. 
+The trade if titanium is done in the traditional supply chain physical market. We 
+load the datasets into the program.
+
+The code uses some functions such as general index list for calculating the moving averages prices and the fit polynomials to analyze commodities and metals price trends.
+
+Polynomials are used to describe the trends of commodities and the metal markets, as an example,  a linear polynomial  offers us the general trajectory, a quadratic and cubic polynomial will show us the ups and downs giving a better resolution therefore the understanding of price behaviours. We found that the use of the cubic polynomial its a better approach in this context.
+
+Even thought the resolution of the cubic polynomial is better, it is valuable to zoom out to see the trends and to reduce the noise so this is what linear and quadratic polynomials do.
+
+The code is also using quadratic regressions for linear, quadratic and cubic curves that represent the estimations of the coefficients that shape the curves. A regression is simply the process to assign coefficients to the curves or to predict the curves. In the context of this project, it means to predict commodity prices with regression, a coefficient is simply a parameter that indicates the shape of the curve, for example in a linear equation given by y = mx + b    m is the coefficient that controls the slope of the curve, similar case for a quadratic and cubic curve. With regression we can create the logic of "given today, give me tomorrow".
+
+With regression we can create the logic of "given today, give me tomorrow". We are using Torch package for neural networks.
+
+**The final flow overview is as follow:** 
+
+- Raw data
+- Arrangement of data
+- Calculation of moving averages
+- Calculation of polynomial equations with regression (linear, quadratic, cubic)
+- Use of neural networks
+- Next period predictions
+
+## Why we wrote the code?
+Adding years of experience of two collaborators, one in the software development and the stock market area and the other one in the international supply chain of physical metals we decided to merge the knowledge to create a good solution for predicting the prices and trajectories of:
+
+- copper
+- silver
+- gold
+- oil
+- titanium
+
+## What problem are we trying to address?
+Large corporations and individuals with finance and stock trading information use complex algorithms and in more common cases machine learning to profit by predicting where the prices are moving. In this case we are trying to create an effective solution yet simple and open to perform in our decision making. The use of this tool can be beneficial for independent commodity or metal traders in speculative markets, managers and executives looking for better information to negotiate prices in the physical metal and commodity industries.
+
+
+## Installation Instructions
+
+1. Make sure you know the requirements, follow the link below.
+2. Create your virtual environment.
+3. Run pip
+
+## Usage
+
+The inputs are datasets of daily prices of copper, gold, silver, oil and titanium with time markup, open price, high price, low price and close price.
+With these inputs, we refine and trasnform them into data that we feed into the neural net. 
+The outputs include candlestick visualization as well as a price prediction for the US Price Producer Index.
+
+1. Load datasets in the form of CSV files.
+2. View the data to ensure accuracy. 
+3. Generate features.
+	- Moving Averages
+	- Polynomial regressions
+4. Train the model using processed / generated input.
+5. Evaluate prediction by back-testing as well as incoming data.
+
+
+
+
+## More information
+For more information, please follow the links:
+
+- [Requiriments] (https://github.com/spmusashi/Metal-Price-Analysis/blob/main/requirements.txt)
+- [License and rights] ()
+
+
+
 ## Team Members:
-Edward Wei,
-Adrian Ambriz
+
+*Edward Wei: Experience in the stock market and software development.*
+
+*Adrian Ambriz: Experience in commodity and metal trading in the supply chain.*
+
 
 
