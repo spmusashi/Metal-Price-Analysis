@@ -47,6 +47,16 @@ With regression we can create the logic of "given today, give me tomorrow". We a
 - Use of neural networks
 - Next period predictions
 
+## Why we wrote the code?
+Adding years of experience of two collaborators, one in the software development and the stock market area and the other one in the international supply chain of physical metals we decided to merge the knowledge to create a good solution for predicting the prices and trajectories of:
+-copper
+-silver
+-gold
+-oil
+-titanium
+
+## What problem are we trying to address?
+Large corporations and individuals with finance and stock trading information use complex algorithms and in more common cases machine learning to profit by predicting where the prices are moving. In this case we are trying to create an effective solution yet simple and open to perform in our decision making. The use of this tool can be beneficial for independent commodity or metal traders in speculative markets, managers and executives looking for better information to negotiate prices in the physical metal and commodity industries.
 
 
 
