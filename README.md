@@ -36,9 +36,9 @@ Even thought the resolution of the cubic polynomial is better, it is valuable to
 
 The code is also using quadratic regressions for linear, quadratic and cubic curves that represent the estimations of the coefficients that shape the curves. A regression is simply the process to assign coefficients to the curves or to predict the curves. In the context of this project, it means to predict commodity prices with regression, a coefficient is simply a parameter that indicates the shape of the curve, for example in a linear equation given by y = mx + b    m is the coefficient that controls the slope of the curve, similar case for a quadratic and cubic curve. With regression we can create the logic of "given today, give me tomorrow".
 
-With regression we can create the logic of "given today, give me tomorrow".
+With regression we can create the logic of "given today, give me tomorrow". We are using Torch package for neural networks.
 
-We are using Torch package for neural networks and the final flow overview is as follow: 
+**The final flow overview is as follow:** 
 
 - Raw data
 - Arrangement of data
