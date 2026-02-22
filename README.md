@@ -28,6 +28,26 @@ in contrast with the rest.
 The trade if titanium is done in the traditional supply chain physical market. We 
 load the datasets into the program.
 
+The code uses some functions such as general index list for calculating the moving averages prices and the fit polynomials to analyze commodities and metals price trends.
+
+Polynomials are used to describe the trends of commodities and the metal markets, as an example,  a linear polynomial  offers us the general trajectory, a quadratic and cubic polynomial will show us the ups and downs giving a better resolution therefore the understanding of price behaviours. We found that the use of the cubic polynomial its a better approach in this context.
+
+Even thought the resolution of the cubic polynomial is better, it is valuable to zoom out to see the trends and to reduce the noise so this is what linear and quadratic polynomials do.
+
+The code is also using quadratic regressions for linear, quadratic and cubic curves that represent the estimations of the coefficients that shape the curves. A regression is simply the process to assign coefficients to the curves or to predict the curves. In the context of this project, it means to predict commodity prices with regression, a coefficient is simply a parameter that indicates the shape of the curve, for example in a linear equation given by y = mx + b    m is the coefficient that controls the slope of the curve, similar case for a quadratic and cubic curve. With regression we can create the logic of "given today, give me tomorrow".
+
+With regression we can create the logic of "given today, give me tomorrow".
+
+We are using Torch package for neural networks and the final flow overview is as follow: 
+
+- Raw data
+- Arrangement of data
+- Calculation of moving averages
+- Calculation of polynomial equations with regression (linear, quadratic, cubic)
+- Use of neural networks
+- Next period predictions
+
+
 
 
 
