@@ -60,12 +60,25 @@ Adding years of experience of two collaborators, one in the software development
 Large corporations and individuals with finance and stock trading information use complex algorithms and in more common cases machine learning to profit by predicting where the prices are moving. In this case we are trying to create an effective solution yet simple and open to perform in our decision making. The use of this tool can be beneficial for independent commodity or metal traders in speculative markets, managers and executives looking for better information to negotiate prices in the physical metal and commodity industries.
 
 
+## Installation Instructions
 
-## Documentation Links
+1. Make sure you know the requirements, follow the link below.
+2. Create your virtual environment.
+3. Run pip
+
+## Usage
+
+1. Load datasets in the form of CSV files.
+2. Generate features.
+	2.1 Moving Averages.
+	2.2 Polynomial predictors.
+3. Train the model.
+4. Evaluate visualy the charts.
+
+
+## More information
 For more information, please follow the links:
 
-
-- [Installation Instructions] ()
 - [Requiriments] (https://github.com/spmusashi/Metal-Price-Analysis/blob/main/requirements.txt)
 - [License and rights] ()
 
