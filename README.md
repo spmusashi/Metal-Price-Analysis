@@ -64,15 +64,16 @@ Large corporations and individuals with finance and stock trading information us
 ## Documentation Links
 For more information, please follow the links:
 
-[Installation Instructions] ()
-[Requiriments] ()
-[License and rights] ()
+
+- [Installation Instructions] ()
+- [Requiriments] (https://github.com/spmusashi/Metal-Price-Analysis/blob/main/requirements.txt)
+- [License and rights] ()
 
 
 
 ## Team Members:
 
-*Edward Wei: Experience in stock market and software development.*
+*Edward Wei: Experience in the stock market and software development.*
 
 *Adrian Ambriz: Experience in commodity and metal trading in the supply chain.*
 
