@@ -68,12 +68,17 @@ Large corporations and individuals with finance and stock trading information us
 
 ## Usage
 
+The inputs are datasets of daily prices of copper, gold, silver, oil and titanium with time markup, open price, high price, low price and close price.
+The outputs are the visual charts candlestick type with price predictions.
+
 1. Load datasets in the form of CSV files.
 2. Generate features.
-	2.1 Moving Averages.
-	2.2 Polynomial predictors.
+	- Moving Averages.
+	- Polynomial predictors.
 3. Train the model.
 4. Evaluate visualy the charts.
+
+
 
 
 ## More information
