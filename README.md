@@ -87,7 +87,7 @@ The outputs include candlestick visualization as well as a price prediction for 
 For more information, please follow the links:
 
 - [Requiriments] (https://github.com/spmusashi/Metal-Price-Analysis/blob/main/requirements.txt)
-- [License and rights] ()
+- [License and rights] (https://github.com/spmusashi/Metal-Price-Analysis/blob/main/LICENSE)
 
 
 
