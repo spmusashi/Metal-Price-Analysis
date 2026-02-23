@@ -16,6 +16,7 @@ def see_candles(tv_daily_data, title):
     fig.show()
     return()    
 
+# The following function indicates the distance between two positions.
 def generate_index(df, moving_average_length):
     ma_index = range(moving_average_length)
     ma_index_list = []
@@ -28,6 +29,7 @@ def generate_index(df, moving_average_length):
         ma_index_list.append(values_from_index)
     return(ma_index_list)
 
+# The following function calculates the mean
 def calc_mean_from_index(df, moving_average_length):
     reference_list_of_lists = generate_index(df, moving_average_length)
     rolling_price = (df['open'] + df['close'])/2
