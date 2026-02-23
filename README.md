@@ -63,8 +63,10 @@ Large corporations and individuals with finance and stock trading information us
 ## Installation Instructions
 
 1. Make sure you know the requirements, follow the link below.
-2. Create your virtual environment.
-3. Run pip
+2. Create the virtual environment.
+3. "pip install -r requirements.txt" at the root directory of the repo
+4. Launch jupyter lab
+5. Run each blocks of code sequentially to replicate results. 
 
 ## Usage
 
