@@ -65,3 +65,32 @@ def proportional_polynomials_errors(polyfxn_1, polyfxn_2, polyfxn_3, df):
     error_results = ti_ppi_df['close'] - combination_p_x
     rss_errors = root_sum_squred(error_results)
     return(a, b, c, rss_errors)
+
+def scale01(selected_column, return_min_max = False):
+    '''
+    This function scales the numerical inputs into 0 and 1, allowing for better training of the machine learning model
+    To transform the ouput of the machine learning input back, we will save the min max of our target and apply the reverse formula
+    to get back to our original values. 
+    '''
+    selected_column_min = min(selected_column)
+    selected_column_max = max(selected_column)
+    transformed_values = []
+    for transformed_value_index in range(len(selected_column)):
+        transformed_values.append((selected_column[transformed_value_index] - selected_column_min) / (selected_column_max - selected_column_min))
+    if(return_min_max == False):
+        return(transformed_values)
+    if(return_min_max == True):
+        return(selected_column_min, selected_column_max)
+    
+    
+def scale01_t_back(scaled_column, selected_column_min, selected_column_max):
+    '''
+    The inverse of scale01, we are transforming back what we put in. Mostly, it will be for the value we are predicting to compare against what we put in.
+    We also want to transform back form a tensor. Inputs for these are likely to be exclusively tensors. So the first transform gets it back to an array. 
+    '''
+    reverted_values = []
+    scaled_column = scaled_column.detach().numpy()
+    for scaled_value_index in range(len(scaled_column)):
+        reverted_values.append( (scaled_column[scaled_value_index] * (selected_column_max - selected_column_min) ) + selected_column_min)
+
+    return(pd.DataFrame(reverted_values))
