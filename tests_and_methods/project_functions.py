@@ -1,3 +1,21 @@
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import pandas as pd
+import csv
+import plotly
+#import plotly.graph_obcalled_listects as go
+import matplotlib.pyplot as plt
+import numpy as np
+import random
+import math
+import unittest
+import os
+from sklearn.model_selection import train_test_split
+
+
+
+
 def see_candles(tv_daily_data, title):
     #TradingView Daily Data (our ML inputs)
     #Strig you want to name the chart
@@ -52,6 +70,7 @@ def sum_to_1():
     b = (1 - a) * np.random.rand()
     c = 1 - a - b
     return(a, b, c)
+
 def root_sum_squred(input_list):
     sum_squares = 0
     for i in range(len(input_list)):
@@ -66,22 +85,16 @@ def proportional_polynomials_errors(polyfxn_1, polyfxn_2, polyfxn_3, df):
     rss_errors = root_sum_squred(error_results)
     return(a, b, c, rss_errors)
 
-def scale01(selected_column, return_min_max = False):
+def scale01(selected_column):
     '''
-    This function scales the numerical inputs into 0 and 1, allowing for better training of the machine learning model
-    To transform the ouput of the machine learning input back, we will save the min max of our target and apply the reverse formula
-    to get back to our original values. 
+    This function scales the numerical inputs into 0 and 1, allowing for better training of the machine learning model. For transfomration
+    back we will pull the minimun and maximun of the original target into the scale01_t_back function
     '''
-    selected_column_min = min(selected_column)
-    selected_column_max = max(selected_column)
+
     transformed_values = []
     for transformed_value_index in range(len(selected_column)):
         transformed_values.append((selected_column[transformed_value_index] - selected_column_min) / (selected_column_max - selected_column_min))
-    if(return_min_max == False):
         return(transformed_values)
-    if(return_min_max == True):
-        return(selected_column_min, selected_column_max)
-    
     
 def scale01_t_back(scaled_column, selected_column_min, selected_column_max):
     '''
@@ -93,4 +106,6 @@ def scale01_t_back(scaled_column, selected_column_min, selected_column_max):
     for scaled_value_index in range(len(scaled_column)):
         reverted_values.append( (scaled_column[scaled_value_index] * (selected_column_max - selected_column_min) ) + selected_column_min)
 
-    return(pd.DataFrame(reverted_values))
+    return_reverted_values = pd.DataFrame(reverted_values)
+
+    return(return_reverted_values)
