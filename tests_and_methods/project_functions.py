@@ -90,11 +90,12 @@ def scale01(selected_column):
     This function scales the numerical inputs into 0 and 1, allowing for better training of the machine learning model. For transfomration
     back we will pull the minimun and maximun of the original target into the scale01_t_back function
     '''
-
+    selected_column_min = min(selected_column)
+    selected_column_max = max(selected_column)
     transformed_values = []
     for transformed_value_index in range(len(selected_column)):
         transformed_values.append((selected_column[transformed_value_index] - selected_column_min) / (selected_column_max - selected_column_min))
-        return(transformed_values)
+    return(transformed_values)
     
 def scale01_t_back(scaled_column, selected_column_min, selected_column_max):
     '''
