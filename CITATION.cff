@@ -7,8 +7,8 @@ authors:
 - family-names: "Ambriz"
   given-names: "Adrian"
   orcid: "https://orcid.org/0000-0000-0000-0000"
-title: "My Research Software"
+title: "Metal Price Analysis"
 version: 1.0.0
-doi: 
+doi: 10.5281/zenodo.1234
 date-released: 2026-03-01
 url: "https://github.com/spmusashi/Metal-Price-Analysis"
