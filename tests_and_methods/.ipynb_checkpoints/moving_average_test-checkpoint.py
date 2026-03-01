@@ -63,6 +63,8 @@ max_test_2_limit = max(cu_df['high'])
 min_test_2_limit = min(cu_df['low'])
 
 
+#Plausible values as in no extremes as well as no negative values as prices cannot be negative.
+#By definition a moving average cannot be a bigger or smaller than any of the extremes of the inputs
 class plausible_values (unittest.TestCase):
     def test_max_is_max(self):
         self.assertTrue(max_test_2_limit > max(test_2_input))

@@ -57,7 +57,8 @@ flattened_list = [item for sublist in negative_values_test_input for item in sub
 flattened_list_index = range(len(flattened_list))
 
 
-class reasonable_values (unittest.TestCase):
+#a valid index contains integers for the specific refernce, we're also testing that the neagative value counter works
+class index_validity (unittest.TestCase):
     def test_count_neg_fxn(self):
         example_list = list([-5,6, 7, 8])
         self.test_count_neg_fxn_input = check_for_negatives_in_list(self, example_list)
