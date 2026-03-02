@@ -61,6 +61,7 @@ Large corporations and individuals with finance and stock trading information us
 
 
 ## Installation Instructions
+Note: The package versions referenced in requirements.txt are based on Windows OS. So you may need to install different versions on MAC or Linux.
 
 1. Make sure you know the requirements, follow the link below.
 2. Create the virtual environment.
@@ -74,9 +75,11 @@ The inputs are datasets of daily prices of copper, gold, silver, oil and titaniu
 With these inputs, we refine and trasnform them into data that we feed into the neural net. 
 The outputs include candlestick visualization, 2 neural net machine learning models, and a statement about the price prediction for Titanium US Price Producer Index.
 
+Note: project_functions.py contains all of the methods (or functions) we developed during the course of this project. 
+
 1. In "Discovery.ipynb", we load the data in and see what they look like throughout the years in candle stick graphs. 
 2. In "Dev_and_Tests.ipynb", we see how the functions used to process the inputs as well as tests were developed.
-3. You can run the tests "neg_values_test.py" as well as the "moving_average_test.py" in the terminal by running the following on the console when starting on the tests_and_methods folder: python -m unittest (insert_python_file.py)
+3. Start on the tests_and_methods folder. You can run the tests "neg_values_test.py" as well as the "moving_average_test.py" in the terminal by running the following command: python -m unittest (insert_python_file.py)
 5. In "Neural_net_1.ipynb" we develop the first machine learning model which is based on derivative calculations of the Titanium PPI Index itself.
 6. In "Neural_net_2.ipynb" we develop the second machine learning model which is based on the closing price of oil, copper, gold, silver, as well as their generated moving monthly averages and the PPI index.
 
