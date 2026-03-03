@@ -63,7 +63,11 @@ max_test_2_limit = max(cu_df['high'])
 min_test_2_limit = min(cu_df['low'])
 
 
-#
+# The following test is the late assignment completion M5 Unittest.
+#In the following test, I have created 3 simple scenarios:
+# 1. I am testing that a MAX value is always larger than a MIN value, For example, 5 is larger than 4.
+# 2. I am testing that a Min value is always smaller than a MAX value, Foir example, 4 is lower than 5.
+# 3. I am testing that the MAX and MIN values are never equal, I mean, never the same. For example, 1 is never 1.
 
 class plausible_values (unittest.TestCase):
     def test_max_is_always_max(self):
@@ -71,4 +75,4 @@ class plausible_values (unittest.TestCase):
     def test_min_is_always_min(self):
         self.assertTrue(min_test_2_limit < max_test_2_limit)
     def test_max_and_min_nonequal(self):
-        self.assertEqual(max_test_2_limit, min_test_2_limit)
+        self.assertNotEqual(max_test_2_limit, min_test_2_limit)
